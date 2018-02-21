@@ -11,9 +11,9 @@
 		EC0F07D5203DBE3000AD665B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F07D4203DBE3000AD665B /* ViewController.swift */; };
 		EC0F07D8203DBE3000AD665B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0F07D6203DBE3000AD665B /* Main.storyboard */; };
 		EC0F07DA203DBE3000AD665B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0F07D9203DBE3000AD665B /* Assets.xcassets */; };
-		EC0F07DD203DBE3000AD665B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0F07DB203DBE3000AD665B /* LaunchScreen.storyboard */; };
 		EC0F07E8203DBE3100AD665B /* bmc132_project2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F07E7203DBE3100AD665B /* bmc132_project2Tests.swift */; };
 		EC0F07F3203DBE3100AD665B /* bmc132_project2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F07F2203DBE3100AD665B /* bmc132_project2UITests.swift */; };
+		EC0F0801203DC09700AD665B /* AppInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC0F0800203DC09700AD665B /* AppInfo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		EC0F07D4203DBE3000AD665B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC0F07D7203DBE3000AD665B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC0F07D9203DBE3000AD665B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EC0F07DC203DBE3000AD665B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC0F07DE203DBE3000AD665B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC0F07E3203DBE3100AD665B /* bmc132_project2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bmc132_project2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0F07E7203DBE3100AD665B /* bmc132_project2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bmc132_project2Tests.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		EC0F07EE203DBE3100AD665B /* bmc132_project2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bmc132_project2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0F07F2203DBE3100AD665B /* bmc132_project2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bmc132_project2UITests.swift; sourceTree = "<group>"; };
 		EC0F07F4203DBE3100AD665B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC0F0800203DC09700AD665B /* AppInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppInfo.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +101,8 @@
 				EC0F07D4203DBE3000AD665B /* ViewController.swift */,
 				EC0F07D6203DBE3000AD665B /* Main.storyboard */,
 				EC0F07D9203DBE3000AD665B /* Assets.xcassets */,
-				EC0F07DB203DBE3000AD665B /* LaunchScreen.storyboard */,
 				EC0F07DE203DBE3000AD665B /* Info.plist */,
+				EC0F0800203DC09700AD665B /* AppInfo.plist */,
 			);
 			path = bmc132_project2;
 			sourceTree = "<group>";
@@ -232,9 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC0F07DD203DBE3000AD665B /* LaunchScreen.storyboard in Resources */,
 				EC0F07DA203DBE3000AD665B /* Assets.xcassets in Resources */,
 				EC0F07D8203DBE3000AD665B /* Main.storyboard in Resources */,
+				EC0F0801203DC09700AD665B /* AppInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +302,6 @@
 				EC0F07D7203DBE3000AD665B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EC0F07DB203DBE3000AD665B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC0F07DC203DBE3000AD665B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
