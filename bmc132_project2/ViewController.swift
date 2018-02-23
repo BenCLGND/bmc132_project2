@@ -10,11 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var ageField: UITextField!
-    @IBOutlet weak var animalField: UITextField!
-    @IBOutlet weak var musicianField: UITextField!
+
     
     
     override func viewDidLoad() {

@@ -4,13 +4,13 @@
 <dict>
 	<key>Name</key>
 	<string>John Smith</string>
-	<key>Email Address</key>
-	<string>example@something.com</string>
 	<key>Age</key>
 	<integer>100</integer>
-	<key>Favorite Animal</key>
+	<key>Favorite Gaming Platform</key>
+	<string>Playstation</string>
+	<key>Favorite Game Genre</key>
 	<string>Dog</string>
-	<key>Favorite Musician</key>
+	<key>Favorite Game Developer</key>
 	<string>Siri</string>
 </dict>
 </plist>
