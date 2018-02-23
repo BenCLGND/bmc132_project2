@@ -2,9 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleExecutable</key>
-	<string></string>
-	<key>CFBundleIdentifier</key>
-	<string></string>
+	<key>Name</key>
+	<string>John Smith</string>
+	<key>Email Address</key>
+	<string>example@something.com</string>
+	<key>Age</key>
+	<integer>100</integer>
+	<key>Favorite Animal</key>
+	<string>Dog</string>
+	<key>Favorite Musician</key>
+	<string>Siri</string>
 </dict>
 </plist>
