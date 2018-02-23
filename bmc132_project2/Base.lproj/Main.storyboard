@@ -83,6 +83,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="ageField" destination="U7a-C3-MnQ" id="f5I-gr-YYA"/>
+                        <outlet property="animalField" destination="82D-6p-5eX" id="NPo-IU-tbo"/>
+                        <outlet property="emailField" destination="pKX-zE-zkm" id="bgJ-1u-Atk"/>
+                        <outlet property="musicianField" destination="D02-aK-xAf" id="cTe-b3-efS"/>
+                        <outlet property="nameField" destination="rhv-yO-cy9" id="NUc-Yr-TSX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
