@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:bmc132_project2.xcodeproj">
+      location = "group:../game controller.jpg">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
