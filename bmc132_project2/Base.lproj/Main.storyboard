@@ -92,6 +92,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bbn-MP-Lrl">
                                 <rect key="frame" x="73.333333333333329" y="34" width="237.33333333333337" height="228"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bbn-MP-Lrl" secondAttribute="height" multiplier="237:227" id="dUw-1M-KmJ"/>
                                     <constraint firstAttribute="height" constant="228" id="unh-wv-Mqy">

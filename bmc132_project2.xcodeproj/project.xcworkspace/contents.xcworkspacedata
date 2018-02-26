@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../game controller.jpg">
+      location = "group:/Users/bmc132/bmc132_project2/bmc132_project2/game controller.jpg">
    </FileRef>
    <FileRef
       location = "self:">

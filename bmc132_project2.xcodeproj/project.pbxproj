@@ -47,6 +47,7 @@
 		EC0F07F2203DBE3100AD665B /* bmc132_project2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bmc132_project2UITests.swift; sourceTree = "<group>"; };
 		EC0F07F4203DBE3100AD665B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC0F0800203DC09700AD665B /* AppInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppInfo.plist; sourceTree = "<group>"; };
+		EC6F8E66204483CF008AD839 /* game controller.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "game controller.jpg"; path = "/Users/bmc132/bmc132_project2/bmc132_project2/game controller.jpg"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				EC0F07D2203DBE3000AD665B /* AppDelegate.swift */,
+				EC6F8E66204483CF008AD839 /* game controller.jpg */,
 				EC0F07D4203DBE3000AD665B /* ViewController.swift */,
 				EC0F07D6203DBE3000AD665B /* Main.storyboard */,
 				EC0F07D9203DBE3000AD665B /* Assets.xcassets */,
