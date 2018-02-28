@@ -32,14 +32,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         self.nameField.delegate = self
+        self.ageField.delegate = self
+        self.gamePlatformField.delegate = self
+        self.gameGenreField.delegate = self
+        self.gameDeveloperField.delegate = self
+        
+        // shifts the view up for space for the keyboard
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
+            notification in
+            
+            // find the size of the keyboard
+            guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                print("ERROR: Unable to get keyboard size")
+                return
+            }
+            
+            // move the whole thing up
+            self.view.frame.origin.y = -keyboardSize.height
+        }
+        
+        // shifts the view up for space for the keyboard
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) {
+            notification in
+            
+            // move back to original position
+            self.view.frame.origin.y = 0
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         self.nameField.resignFirstResponder()
+        self.ageField.resignFirstResponder()
+        self.gamePlatformField.resignFirstResponder()
+        self.gameGenreField.resignFirstResponder()
+        self.gameDeveloperField.resignFirstResponder()
         
         return true
     }
-
+    
+    
+    
 }
 
