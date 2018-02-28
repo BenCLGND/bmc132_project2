@@ -8,16 +8,38 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
 
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var ageField: UITextField!
+    @IBOutlet weak var gamePlatformField: UITextField!
+    @IBOutlet weak var gameGenreField: UITextField!
+    @IBOutlet weak var gameDeveloperField: UITextField!
     
+    struct appInfo {
+        
+        var userName = ""
+        var age = 0
+        var favePlatform = ""
+        var faveGameGenre = ""
+        var faveGameDeveloper = ""
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        self.nameField.delegate = self
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.nameField.resignFirstResponder()
+        
+        return true
+    }
 
 }
 
