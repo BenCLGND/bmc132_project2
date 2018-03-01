@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var userInput = appInfo()
     
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var gamePlatformField: UITextField!
@@ -48,6 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.gameDeveloperField.text = self.userInput.FavoriteGameDeveloper
         }
         
+        //MARK: Begin Reading and decoding plist
         guard let userInputURL = Bundle.main.url(forResource: "userInfo", withExtension: "plist") else {
             print("Error: Path cannot be formed")
             return
@@ -64,6 +66,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         self.userInput = userInput
+        
+        //MARK: Begin reading/decoding of user plist
         guard let localData = try? Data(contentsOf: userInputURL) else {
             print("Error: Data not found")
             return
@@ -75,6 +79,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         self.userInput = localUserInputData
+        
+        //MARK: Moving Keyboard for text fields
+        
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
+            notification in
+            
+            guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                print("ERROR: Unable to get keyboard size")
+                return
+            }
+            
+            self.view.frame.origin.y = -keyboardSize.height
+        }
+        
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) {
+            notification in
+            
+            self.view.frame.origin.y = 0
+        }
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -87,7 +111,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         DispatchQueue.main.async {
             if let currentName = self.nameField.text, let currentAge = self.ageField.text, let currentFavePlatform = self.gamePlatformField.text, let currentFaveGenre = self.gameGenreField.text, let currentGameDeveloper = self.gameDeveloperField.text {
-                //print("New Name: \(currentName)")
                 
                 self.userInput.Name = currentName
                 self.userInput.Age = currentAge
@@ -103,14 +126,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print(error)
                 }
                 
-                //print("\(#file), \(#function), \(#line), \(self.userInput)")
                 //print("User Data File: \(self.plistURL)")
             }
         }
         
         return true
     }
-    
     
     
 }
