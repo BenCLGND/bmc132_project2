@@ -41,6 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.gameGenreField.delegate = self
         self.gameDeveloperField.delegate = self
         
+        
         defer {
             self.nameField.text = self.userInput.Name
             self.ageField.text = self.userInput.Age
