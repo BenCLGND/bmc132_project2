@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     
     var userInput = appInfo()
-    
+    var activeField: UITextField!
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -86,6 +86,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
             notification in
             
+            if self.activeField == self.nameField {
+                return
+            }
+            else if self.activeField == self.ageField {
+                return
+            }
+            else if self.activeField == self.gamePlatformField{
+                return
+            }
+            
             guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 print("ERROR: Unable to get keyboard size")
                 return
@@ -104,11 +114,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        self.nameField.resignFirstResponder()
-        self.ageField.resignFirstResponder()
-        self.gamePlatformField.resignFirstResponder()
-        self.gameGenreField.resignFirstResponder()
-        self.gameDeveloperField.resignFirstResponder()
+        textField.resignFirstResponder()
         
         DispatchQueue.main.async {
             if let currentName = self.nameField.text, let currentAge = self.ageField.text, let currentFavePlatform = self.gamePlatformField.text, let currentFaveGenre = self.gameGenreField.text, let currentGameDeveloper = self.gameDeveloperField.text {
@@ -134,6 +140,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
 }
 
