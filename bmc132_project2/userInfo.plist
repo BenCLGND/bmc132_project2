@@ -5,12 +5,12 @@
 	<key>Name</key>
 	<string>John Smith</string>
 	<key>Age</key>
-	<integer>100</integer>
+	<string>100</string>
 	<key>Favorite Gaming Platform</key>
 	<string>Playstation</string>
 	<key>Favorite Game Genre</key>
-	<string>Dog</string>
+	<string>RPG</string>
 	<key>Favorite Game Developer</key>
-	<string>Siri</string>
+	<string>Gust</string>
 </dict>
 </plist>
