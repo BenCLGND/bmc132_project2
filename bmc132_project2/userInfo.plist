@@ -6,11 +6,11 @@
 	<string>John Smith</string>
 	<key>Age</key>
 	<string>100</string>
-	<key>Favorite Gaming Platform</key>
+	<key>FavoriteGamingPlatform</key>
 	<string>Playstation</string>
-	<key>Favorite Game Genre</key>
+	<key>FavoriteGameGenre</key>
 	<string>RPG</string>
-	<key>Favorite Game Developer</key>
+	<key>FavoriteGameDeveloper</key>
 	<string>Gust</string>
 </dict>
 </plist>
