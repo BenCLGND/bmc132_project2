@@ -146,6 +146,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 } catch {
                     print(error)
                 }
+                
+                print("User data file: \(self.plistURL)")
             }
         }
         
