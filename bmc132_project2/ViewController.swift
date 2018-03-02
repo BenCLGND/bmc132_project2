@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Struct to hold data for plist writing/reading
 struct appInfo : Codable {
     
     var Name: String?
@@ -20,28 +21,31 @@ struct appInfo : Codable {
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    
+    //MARK: Variables to pass to functions
     var userInput = appInfo()
     var activeField: UITextField!
     
+    //Var to write plist in bundle
+    lazy var plistURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("userInfo").appendingPathExtension("plist")
+    
+    //MARK: Text Field References
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var gamePlatformField: UITextField!
     @IBOutlet weak var gameGenreField: UITextField!
     @IBOutlet weak var gameDeveloperField: UITextField!
-    
-    lazy var plistURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("userInfo").appendingPathExtension("plist")
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Delegating each textField
         self.nameField.delegate = self
         self.ageField.delegate = self
         self.gamePlatformField.delegate = self
         self.gameGenreField.delegate = self
         self.gameDeveloperField.delegate = self
         
-        
+        //MARK: Filling in text fields from plist in bundle
         defer {
             self.nameField.text = self.userInput.Name
             self.ageField.text = self.userInput.Age
@@ -82,15 +86,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.userInput = localUserInputData
         
         //MARK: Moving Keyboard for text fields
-        
         NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
             notification in
             
             guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-                print("ERROR: Unable to get keyboard size")
+                print("Error: Keyboard Size not found")
                 return
             }
             
+            //Handle cases as to avoid certain fields from being pushed offscreen during landscape view
             if self.activeField == self.nameField {
                 return
             }
@@ -117,13 +121,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //MARK: Misc Functions for textfields
+    //Encodes data to plist while resigning the active textField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
         
+        //Encode to plist
         DispatchQueue.main.async {
             if let currentName = self.nameField.text, let currentAge = self.ageField.text, let currentFavePlatform = self.gamePlatformField.text, let currentFaveGenre = self.gameGenreField.text, let currentGameDeveloper = self.gameDeveloperField.text {
                 
+                //Variables to set to plist
                 self.userInput.Name = currentName
                 self.userInput.Age = currentAge
                 self.userInput.FavoriteGamingPlatform = currentFavePlatform
@@ -131,20 +139,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.userInput.FavoriteGameDeveloper = currentGameDeveloper
                 
                 let encoder = PropertyListEncoder()
+                
                 encoder.outputFormat = .xml
                 do {
                     try encoder.encode(self.userInput).write(to: self.plistURL)
                 } catch {
                     print(error)
                 }
-                
-                //print("User Data File: \(self.plistURL)")
             }
         }
         
         return true
     }
     
+    //Allows textFields to be marked as active to make handling easier
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
