@@ -86,6 +86,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
             notification in
             
+            guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                print("ERROR: Unable to get keyboard size")
+                return
+            }
+            
             if self.activeField == self.nameField {
                 return
             }
@@ -93,15 +98,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             else if self.activeField == self.gamePlatformField{
-                return
+                self.view.frame.origin.y = -keyboardSize.height + 200
             }
-            
-            guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-                print("ERROR: Unable to get keyboard size")
-                return
+            else if self.activeField == self.gameGenreField{
+                self.view.frame.origin.y = -keyboardSize.height + 100
             }
-            
-            self.view.frame.origin.y = -keyboardSize.height
+            else {
+                self.view.frame.origin.y = -keyboardSize.height + 50
+            }
+
         }
         
         NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) {
